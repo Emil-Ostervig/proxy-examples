@@ -17,7 +17,7 @@ const handler: ProxyHandler<User> = {
                 throw new Error('The user must be 18 or older.');
             }
         }
-        target[property] = value;
+        Reflect.set(target, property, value);
         return true;
     },
 };
